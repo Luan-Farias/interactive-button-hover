@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    position: relative;
+    font-size: 0.95rem;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin: 1rem;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background: none;
+    overflow: hidden;
+    color: #FF702E;
+}
+
+button:nth-child(1) {
+    background: #FFDFD0;
+}
+
+button:nth-child(2) {
+    border: 2px solid #FF702E;
+}
+
+button span {
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease;
+}
+
+button div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 300%;
+    height: 300%;
+    border-radius: 50%;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 500ms ease;
+    background: #FF702E;
+    z-index: 1;
+}
+
+button:hover span{
+    color: #FFF;
+}
+
+button:hover div {
+    clip-path: circle(100% at 50% 50%);
+}

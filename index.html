@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Button Hover</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <button>
+        <span>Hover</span>
+        <div></div>
+      </button>
+
+      <button>
+        <span>Hover</span>
+        <div></div>
+      </button>
+    </main>
+
+    <script>
+      console.clear();
+
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        const div = button.querySelector("div");
+        ["mouseenter", "mouseleave"].forEach((event) => {
+          button.addEventListener(event, (e) => {
+            div.style.left = `${e.offsetX}px`;
+            div.style.top = `${e.offsetY}px`;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
